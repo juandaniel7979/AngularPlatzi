@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 // import { Product } from './product.model';
-import { Product } from './models/product.model';
+import { AuthService } from './services/auth.service';
+import { UsersService } from './services/users.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,13 @@ export class AppComponent {
 
 imgParent="https://www.w3schools.com/howto/img_avatar.png";
 showImg=true;
+token  = '';
 
+
+constructor(
+){
+
+}
 
 onLoaded(img:string){
   console.log('log padre ' +img)

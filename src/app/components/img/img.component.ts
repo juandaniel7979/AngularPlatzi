@@ -5,14 +5,15 @@ import { Component, Input, OnInit, Output, EventEmitter, OnChanges, AfterViewIni
   templateUrl: './img.component.html',
   styleUrls: ['./img.component.scss']
 })
-export class ImgComponent implements OnInit {
+export class ImgComponent{
 
   img: string = 'valor init';
 
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('img')
   set changeImg(newImg:string){
     this.img = newImg;
-    console.log('change just img =>',this.img )
+    // console.log('change just img =>',this.img )
     // code
 
   }
@@ -28,41 +29,41 @@ export class ImgComponent implements OnInit {
     //before render
     //No correr funciones async
     //corre una vez
-    console.log('constructor','imgValue =>', this.img)
+    // console.log('constructor','imgValue =>', this.img)
   }
 
-  ngOnChanges(changes: SimpleChanges){
+  // ngOnChanges(changes: SimpleChanges){
     //before render
     //changeInputs
     //Se ejecuta cada vez que se actualicen los inputs
-    console.log('ngOnChanges','imgValue =>', this.img);
-    console.log(changes);
-  }
+  //   console.log('ngOnChanges','imgValue =>', this.img);
+  //   console.log(changes);
+  // }
 
 
-  ngAfterViewInit(){
-    // after render
-    //handler children
-    console.log('ngAfterViewInit')
-  }
+  // ngAfterViewInit(){
+  //   // after render
+  //   //handler children
+  //   console.log('ngAfterViewInit')
+  // }
 
-  ngOnDestroy(){
-    // delete component
-    console.log('ngOnDestroy')
-    // window.clearInterval(this.counterFn);
-  }
+  // ngOnDestroy(){
+  //   // delete component
+  //   console.log('ngOnDestroy')
+  //   // window.clearInterval(this.counterFn);
+  // }
 
 
-  ngOnInit(): void {
-    //Before render
-    // Solo corre una vez
-    //Se pueden correr funciones async
-    console.log('ngOnInit','imgValue =>', this.img)
-    // this.counterFn= window.setInterval(()=>{
-    //   this.counter+=1;
-    //   console.log('run counter')
-    // },1000);
-  }
+  // ngOnInit(): void {
+  //   //Before render
+  //   // Solo corre una vez
+  //   //Se pueden correr funciones async
+  //   console.log('ngOnInit','imgValue =>', this.img)
+  //   // this.counterFn= window.setInterval(()=>{
+  //   //   this.counter+=1;
+  //   //   console.log('run counter')
+  //   // },1000);
+  // }
 
 
   imgError(){
@@ -70,7 +71,7 @@ export class ImgComponent implements OnInit {
   }
 
   imgLoaded(){
-    console.log('log hijo')
+    // console.log('log hijo')
     this.loaded.emit(this.img);
   }
 }
